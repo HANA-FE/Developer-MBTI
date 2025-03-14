@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -61,11 +61,13 @@ select {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-100: #edf0f3;
+  --color-main: #a57865;
+  --color-main-light: #b79383;
 }
 
 .container {
   max-width: 576px;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: var(--color-white);
+  background-color: var(--color-main-light);
 }
