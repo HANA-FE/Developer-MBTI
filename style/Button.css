@@ -1,0 +1,21 @@
+.start-button {
+    background-color: #735446;
+    color: white;
+    width: 325px;
+    height: 80px;
+    border-color: black;
+    border-radius: 20px;
+    font-size:32px;
+    font-family: 'dunmgeunmo', Courier, monospace;
+}
+
+.answer-button{
+    background-color: white;
+    color:black;
+    width:350px;
+    height:75px;
+    border-color:black;
+    border-radius: 20px;
+    font-size:20px;
+
+}
