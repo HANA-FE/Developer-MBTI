@@ -19,7 +19,7 @@
   font-size: 20px;
 }
 .header {
-  height: 3vh;
+  height: 5vh;
   position: sticky;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@
 
 /* 가운데 정렬을 위한 제목 스타일 */
 .title {
-  font-size: 4rem; /* 모바일에서 크기 조정 */
+  font-size: 1rem; /* 모바일에서 크기 조정 */
   font-weight: 600;
   flex-grow: 1;
   text-align: center;
@@ -52,21 +52,4 @@
   display: flex;
   align-items: center;
   gap: 10px; /* 아이콘 간격 조정 */
-}
-
-/* 모바일 화면 최적화 */
-@media (max-width: 768px) {
-  .header {
-    height: 5vh; /* 모바일에서 적절한 높이 */
-    padding: 8px 12px;
-  }
-
-  .title {
-    font-size: 0.9rem; /* 글자 크기 줄이기 */
-  }
-
-  .icon-container svg {
-    width: 18px;
-    height: 18px;
-  }
 }
