@@ -71,5 +71,6 @@ select {
   max-width: 576px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 0;
   background-color: var(--color-main-light);
 }

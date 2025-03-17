@@ -6,6 +6,7 @@
   border-color: black;
   border-radius: 20px;
   font-size: 32px;
+  font-family: 'DungGeunMo', Courier, monospace;
 }
 
 .answer-button {
@@ -43,4 +44,39 @@
   height: 30px;
   margin-bottom: 100px;
   font-size: 1.2rem;
+}
+.header {
+  height: 5vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  color: #735446;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: 100%;
+}
+
+/* 가운데 정렬을 위한 제목 스타일 */
+.title {
+  font-size: 0.9rem; /* 모바일에서 크기 조정 */
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* 우측 아이콘 컨테이너 */
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 아이콘 간격 조정 */
 }
