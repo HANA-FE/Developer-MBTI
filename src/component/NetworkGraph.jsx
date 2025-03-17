@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 import { drag as d3drag } from 'd3';
 import { useEffect, useRef } from 'react';
-import { nodes, links } from '../constant/animals';
+import { NODES, LINKS } from '../constant/animals';
 
 const ROTATION_SPEED = 0.0006;
 
@@ -31,14 +31,14 @@ export default function NetworkGraph() {
     const centerX = width / 2;
     const centerY = height / 2;
     return d3
-      .forceSimulation(nodes)
+      .forceSimulation(NODES)
       .force(
         'link',
         d3
-          .forceLink(links)
+          .forceLink(LINKS)
           .id(d => d.id)
           .distance(80)
-          .strength(0)
+          .strength(0.1)
       )
       .force('charge', d3.forceManyBody().strength(-80))
       .force('center', d3.forceCenter(centerX, centerY))
@@ -58,7 +58,7 @@ export default function NetworkGraph() {
     ];
 
     // NOTE 노드들을 원의 중심에서 시작하도록 초기 위치 설정
-    nodes.forEach(node => {
+    NODES.forEach(node => {
       node.x = centerX;
       node.y = centerY;
     });
@@ -111,13 +111,13 @@ export default function NetworkGraph() {
       .attr('stroke', '#Fff')
       .attr('stroke-opacity', 0.2)
       .selectAll('line')
-      .data(links)
+      .data(LINKS)
       .join('line');
 
     const node = svg
       .append('g')
       .selectAll('text')
-      .data(nodes)
+      .data(NODES)
       .join('text')
       .attr('x', d => d.x ?? 0)
       .attr('y', d => d.y ?? 0)
@@ -142,14 +142,14 @@ export default function NetworkGraph() {
     const rotateGraph = () => {
       angle.current += ROTATION_SPEED;
 
-      nodes.forEach((node, i) => {
+      NODES.forEach((node, i) => {
         const radius = 150; // 원의 반지름
-        const currentAngle = angle.current + (i * (Math.PI * 2)) / nodes.length;
+        const currentAngle = angle.current + (i * (Math.PI * 2)) / NODES.length;
         node.x = centerX + radius * Math.cos(currentAngle);
         node.y = centerY + radius * Math.sin(currentAngle);
       });
 
-      simulation.nodes(nodes);
+      simulation.nodes(NODES);
       simulation.alpha(1).restart();
 
       requestAnimationFrame(rotateGraph);
