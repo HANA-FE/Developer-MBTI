@@ -1,13 +1,7 @@
-import { QuestionUtils } from '../../constant/Question';
+import QUESTION from '../../constant/Question';
 
-const QuestionImage = () => {
-  const imagePath = QuestionUtils.getImagePath('PJ', '1');
-
-  return (
-    <div>
-      <img src={imagePath} alt="" />
-    </div>
-  );
+const QuestionImage = ({ questionId }) => {
+  return <img src={QUESTION[questionId].image} alt={`질문 ${questionId}`} />;
 };
 
 export default QuestionImage;
