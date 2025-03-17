@@ -1,0 +1,60 @@
+body {
+    background-color: #B79383;
+}
+
+.title1{
+    color: white;
+    width:360px;
+    height:80px;
+    border:none;
+    font-size: 64px;
+    font-family: 'dungeunmo', Courier, monospace;
+}
+
+.title2{
+    color:white;
+    width:300px;
+    height:35px;
+    border:none;
+    font-size:20px;
+    font-family: 'dungeunmo', Courier, monospace;
+}
+
+.cat{
+    display:flex;
+    width:326px;
+    height:250px;
+    position:absolute;
+    z-index:2;
+
+}
+.screen{
+    display:flex;
+    width:300px;
+    height:261px;
+    position:absolute;
+    z-index:1;
+
+}
+
+.start-button {
+    background-color: #735446;
+    color: white;
+    width: 80%;
+    height: 80px;
+    border-color: black;
+    border-radius: 20px;
+    font-size:32px;
+    font-family: 'dunmgeunmo', Courier, monospace;
+}
+
+.answer-button{
+    background-color: white;
+    color:black;
+    width:80%;
+    height:75px;
+    border-color:black;
+    border-radius: 20px;
+    font-size:20px;
+
+}
