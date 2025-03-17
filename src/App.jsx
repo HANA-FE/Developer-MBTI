@@ -3,7 +3,6 @@ import Routes from './page/Route';
 import Layout from './component/layout/Layout';
 
 function App() {
-  var a = 3;
   return (
     <BrowserRouter>
       <Layout>
