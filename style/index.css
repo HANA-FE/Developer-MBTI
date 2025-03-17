@@ -6,7 +6,6 @@
   border-color: black;
   border-radius: 20px;
   font-size: 32px;
-  font-family: 'dunmgeunmo', Courier, monospace;
 }
 
 .answer-button {
@@ -38,4 +37,10 @@
     font-weight: 600;
     font-size: 1.125rem;
   }
+}
+
+.progress-line {
+  height: 30px;
+  margin-bottom: 100px;
+  font-size: 1.2rem;
 }

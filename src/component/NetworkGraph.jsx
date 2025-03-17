@@ -6,7 +6,8 @@ import { NODES, LINKS } from '../constant/animals';
 const ROTATION_SPEED = 0.0006;
 
 export default function NetworkGraph() {
-  const ref = useRef(null);
+  const divRef = useRef(null);
+  const svgRef = useRef(null);
   const angle = useRef(0);
 
   // NOTE 드래그 이벤트 핸들러
@@ -37,7 +38,7 @@ export default function NetworkGraph() {
         d3
           .forceLink(LINKS)
           .id(d => d.id)
-          .distance(80)
+          .distance(100)
           .strength(0.1)
       )
       .force('charge', d3.forceManyBody().strength(-80))
@@ -47,8 +48,9 @@ export default function NetworkGraph() {
   };
 
   useEffect(() => {
-    if (!ref.current) return;
-    const svg = d3.select(ref.current);
+    if (!svgRef.current) return;
+
+    const svg = d3.select(svgRef.current);
     const width = +svg.attr('width');
     const height = +svg.attr('height');
     const centerX = width / 2;
@@ -87,8 +89,8 @@ export default function NetworkGraph() {
     const simulation = createSimulation(width, height);
 
     const updateGraphSize = () => {
-      const { innerWidth, innerHeight } = window;
-      let [width, height] = [Math.min(500, innerWidth), Math.min(500, innerHeight)];
+      const { innerHeight } = window;
+      let [width, height] = [divRef.current.offsetWidth, Math.min(500, innerHeight)];
       svg.attr('width', width).attr('height', height);
 
       const newCenterX = width / 2;
@@ -162,5 +164,9 @@ export default function NetworkGraph() {
     };
   }, []);
 
-  return <svg ref={ref} />;
+  return (
+    <div style={{ width: '100%' }} ref={divRef}>
+      <svg ref={svgRef} />
+    </div>
+  );
 }
