@@ -36,7 +36,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--color-gray-100);
-  font-family: 'dungeunmo', Courier, monospace;
+  font-family: 'DungGeunMo', Courier, monospace;
 }
 
 /* A elements that don't have a class get default styles */
@@ -70,5 +70,6 @@ select {
   max-width: 576px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 0;
   background-color: var(--color-main-light);
 }
