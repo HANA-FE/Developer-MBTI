@@ -25,7 +25,7 @@ const Test = () => {
     if (currentId === QUESTION.length - 1) {
       // 마지막 질문의 답변이 완료되었을 때
       const result = calculateResult(answers);
-      navigate('/result', {
+      navigate('/loading', {
         state: {
           result: result,
         },
