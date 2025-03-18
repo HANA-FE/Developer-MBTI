@@ -1,3 +1,91 @@
+.title1 {
+  color: white;
+  width: 80%;
+  height: 40%;
+  border: none;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  left: 13%;
+  font-size: 5rem;
+  @media (max-width: 560px) {
+    font-size: 3rem;
+  }
+}
+
+.title2 {
+  color: white;
+  width: 70%;
+  height: 35%;
+  border: none;
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 16%;
+  font-size: 1.8rem;
+  @media (max-width: 560px) {
+    font-size: 1.2rem;
+  }
+}
+
+.cat {
+  display: flex;
+  width: 80%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  position: relative;
+  img {
+    transform: translate(-5%, 30%);
+    width: 80%;
+    height: auto;
+  }
+}
+.screen {
+  display: flex;
+  width: 70%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 100;
+  img {
+    transform: translate(-5%, 8%);
+    width: 140%;
+    height: auto;
+  }
+}
+
+.Home-button {
+  display: flex;
+  width: 80%;
+  height: 80px;
+  transform: translate(22%, -160%);
+  position: absolute;
+}
+
+.start-button {
+  background-color: #735446;
+  color: white;
+  width: 80%;
+  height: 80px;
+  border-color: black;
+  border-radius: 20px;
+  font-size: 2rem;
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
+}
+
+.answer-button {
+  background-color: white;
+  color: black;
+  width: 80%;
+  height: 75px;
+  border-color: black;
+  border-radius: 20px;
+  font-size: 20px;
+}
 .start-button {
   background-color: #735446;
   color: white;
