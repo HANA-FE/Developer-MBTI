@@ -1,40 +1,70 @@
-body {
-    background-color: #B79383;
-}
+
 
 .title1{
     color: white;
-    width:360px;
-    height:80px;
-    border:none;
-    font-size: 64px;
-    font-family: 'dungeunmo', Courier, monospace;
+    width:80%;
+    height:40%;
+    border: none;
+    display:flex;
+    position:absolute;
+    top:0%;
+    left:15%;
+    font-size:5rem;
+    @media(max-width:560px){
+        font-size: 3rem;
+    } 
+
 }
 
 .title2{
     color:white;
-    width:300px;
-    height:35px;
+    width:70%;
+    height:35%;
     border:none;
-    font-size:20px;
-    font-family: 'dungeunmo', Courier, monospace;
+    display:flex;
+    position:absolute;
+    top:13%;
+    left:21%;
+    font-size:1.8rem;
+    @media(max-width:560px){
+        font-size: 1.2rem;
+    } 
+
 }
 
 .cat{
     display:flex;
-    width:326px;
-    height:250px;
-    position:absolute;
-    z-index:2;
+    width:100%;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    z-index:200;
+    position:relative;
+img{    transform: translate(-10%,30%);
+    width: 80%;
+    height: auto;
+}
 
 }
 .screen{
     display:flex;
-    width:300px;
-    height:261px;
+    width:70%;
     position:absolute;
-    z-index:1;
+    top:20%;
+    left:20%;
+    z-index:100;
+    img{    transform: translate(-5%,10%);
+        width: 140%;
+        height: auto;
+    }
+}
 
+.Home-button{
+   display:flex;
+   width:80%;
+   height:80px;
+   transform: translate(22%,-190%);
+   position:absolute;
 }
 
 .start-button {
@@ -44,8 +74,10 @@ body {
     height: 80px;
     border-color: black;
     border-radius: 20px;
-    font-size:32px;
-    font-family: 'dunmgeunmo', Courier, monospace;
+    font-size:2rem;
+    @media(max-width:480px){
+        font-size: 1.3rem;
+    } 
 }
 
 .answer-button{
