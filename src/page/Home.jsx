@@ -15,11 +15,11 @@ function Home() {
         </div>
 
         <div className="cat">
-          <img src=".\src\image\homeCat.png" alt="Cat" />
+          <img src="./src/image/homeCat.png" alt="Cat" />
         </div>
 
         <div className="screen">
-          <img src=".\src\image\home.screen.png" alt="screen" />
+          <img src="./src/image/home.screen.png" alt="screen" />
         </div>
 
         <div className="Home-button">
