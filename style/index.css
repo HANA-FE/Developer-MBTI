@@ -6,7 +6,7 @@
   display: flex;
   position: absolute;
   top: 0%;
-  left: 15%;
+  left: 13%;
   font-size: 5rem;
   @media (max-width: 560px) {
     font-size: 3rem;
@@ -20,8 +20,8 @@
   border: none;
   display: flex;
   position: absolute;
-  top: 13%;
-  left: 21%;
+  top: 15%;
+  left: 16%;
   font-size: 1.8rem;
   @media (max-width: 560px) {
     font-size: 1.2rem;
@@ -30,14 +30,14 @@
 
 .cat {
   display: flex;
-  width: 100%;
+  width: 80%;
   height: 100vh;
   justify-content: center;
   align-items: center;
   z-index: 200;
   position: relative;
   img {
-    transform: translate(-10%, 30%);
+    transform: translate(-5%, 30%);
     width: 80%;
     height: auto;
   }
@@ -50,7 +50,7 @@
   left: 20%;
   z-index: 100;
   img {
-    transform: translate(-5%, 10%);
+    transform: translate(-5%, 8%);
     width: 140%;
     height: auto;
   }
@@ -60,7 +60,7 @@
   display: flex;
   width: 80%;
   height: 80px;
-  transform: translate(22%, -190%);
+  transform: translate(22%, -160%);
   position: absolute;
 }
 
