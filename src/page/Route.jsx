@@ -1,7 +1,6 @@
 import { Route, Routes as ReactRouterRoutes } from 'react-router-dom';
 import Home from './Home';
 import Loading from './Loading';
-// import Result from './Result';
 import Test from './Test';
 import Result from './Result';
 
