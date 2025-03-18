@@ -6,6 +6,9 @@ import Button from '../component/UI/Button';
 export default function Home() {
   const router = useRouter();
 
+  const QUESTION_LENGTH = 12;
+  const cnt = 5;
+
   return (
     <div>
       <div
@@ -17,10 +20,9 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        <Progress value={(5 / 12) * 100} text="5/12" cat />
+        <Progress value={(cnt / QUESTION_LENGTH) * 100} text={`${cnt}/${QUESTION_LENGTH}`} cat />
         <NetworkGraph />
       </div>
-      <Button type="start-button" onClick={() => router.push('/loading')} text="시작하기" />
     </div>
   );
 }
