@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../style/index.css';
 import Button from '../component/UI/Button';
+import Cat from './src/image/homeCat.png';
+import Screen from './src/image/home.screen.png';
 
 function Home() {
   return (
@@ -15,11 +17,11 @@ function Home() {
         </div>
 
         <div className="cat">
-          <img src="./src/image/homeCat.png" alt="Cat" />
+          <img src={Screen} alt="Cat" />
         </div>
 
         <div className="screen">
-          <img src="./src/image/home.screen.png" alt="screen" />
+          <img src={Cat} alt="screen" />
         </div>
 
         <div className="Home-button">
