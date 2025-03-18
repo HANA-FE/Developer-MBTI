@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRouter } from '../hook/useRouter';
+import { useLocation, useNavigate } from 'react-router-dom';
 import FOX from '../image/animal/fox.png';
 import DOLPHIN from '../image/animal/dolphin.png';
 import CAT from '../image/animal/cat.png';
@@ -9,7 +9,9 @@ const images = [FOX, DOLPHIN, CAT, PANDA];
 
 export default function Loading() {
   const [index, setIndex] = useState(0);
-  const router = useRouter();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { result } = location.state || {};
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -21,9 +23,9 @@ export default function Loading() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/result');
+      navigate('/result', { state: { result } });
     }, 2000);
-  }, [router]);
+  }, [navigate, result]);
 
   return (
     <div className="loading-container">
