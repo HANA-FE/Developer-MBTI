@@ -3,6 +3,7 @@ import Home from './Home';
 import Loading from './Loading';
 import Result from './Result';
 import Test from './Test';
+import TestResult from './TestResult';
 
 export default function Routes() {
   return (
@@ -11,6 +12,7 @@ export default function Routes() {
       <Route path="/loading" element={<Loading />} />
       <Route path="/result" element={<Result />} />
       <Route path="/test" element={<Test />} />
+      <Route path="/result" element={<TestResult />} />
     </ReactRouterRoutes>
   );
 }
