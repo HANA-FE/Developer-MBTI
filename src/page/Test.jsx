@@ -1,10 +1,13 @@
-import Button from '../component/UI/Button';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+// style
 import '../../style/index.css';
+// components
+import Button from '../component/UI/Button';
 import QuestionText from '../component/UI/QuestionText';
 import QuestionImage from '../component/UI/QuestionImage';
 import QUESTION from '../constant/Question';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import Progress from '../component/UI/Progress';
 
 const Test = () => {
   const navigate = useNavigate();
@@ -20,18 +23,6 @@ const Test = () => {
     P: 0,
     J: 0,
   });
-
-  useEffect(() => {
-    if (currentId === QUESTION.length - 1) {
-      // 마지막 질문의 답변이 완료되었을 때
-      const result = calculateResult(answers);
-      navigate('/loading', {
-        state: {
-          result: result,
-        },
-      });
-    }
-  }, [answers, currentId, navigate]);
 
   const calculateResult = answers => {
     const result = [
@@ -55,10 +46,23 @@ const Test = () => {
     if (currentId < QUESTION.length - 1) {
       setCurrentId(prev => prev + 1);
     }
+    // 마지막 질문일 경우
+    else {
+      const result = calculateResult(answers);
+      navigate('/loading', {
+        state: { result },
+      });
+    }
   };
+
+  const progress = Object.values(answers).reduce((acc, cur) => acc + cur, 0);
 
   return (
     <div className="test-page">
+      <div className="home-progress-wrapper">
+        <Progress value={(progress / 12) * 100} text={`${progress}/${12}`} />
+      </div>
+
       <div className="question-wrapper">
         <QuestionText questionId={currentId} />
       </div>
