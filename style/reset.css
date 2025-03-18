@@ -20,8 +20,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -36,6 +36,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: var(--color-gray-100);
+  font-family: 'DungGeunMo', Courier, monospace;
 }
 
 /* A elements that don't have a class get default styles */
@@ -61,11 +62,14 @@ select {
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-100: #edf0f3;
+  --color-main: #a57865;
+  --color-main-light: #b79383;
 }
 
 .container {
   max-width: 576px;
   min-height: 100vh;
   margin: 0 auto;
-  background-color: var(--color-white);
+  padding: 0;
+  background-color: var(--color-main-light);
 }
