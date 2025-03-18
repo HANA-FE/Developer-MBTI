@@ -60,33 +60,42 @@
   height: calc(100vh - 5vh);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .question-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 5%;
+  height: 25vh;
+  padding: 0 5%;
 }
 
 .question-text {
   color: white;
-  font-size: 1.7em;
+  font-size: 1.6em;
   line-height: 1.5;
   white-space: pre-line;
   text-align: center;
+  max-height: 100%;
 }
 
 .question-image-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 5%;
+  height: 45vh;
+  padding: 0 5%;
 }
 
 .question-image {
-  width: 100%;
+  width: auto;
+  height: 90%;
+  max-width: 100%;
+  object-fit: contain;
   border-radius: 10px;
 }
 
@@ -96,13 +105,16 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 20px;
+  padding: 3vh 20px;
 }
 
 .test-button {
   background-color: white;
   color: black;
   width: 100%;
+  min-height: 60px;
+  height: 8vh;
+  max-height: 80px;
   border: 2px solid black;
   border-radius: 20px;
   font-size: 18px;
@@ -110,6 +122,9 @@
   transition: all 0.2s ease-in-out;
   white-space: pre-line;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .test-button:hover {
