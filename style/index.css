@@ -57,7 +57,7 @@
 
 /* Test 페이지 스타일 */
 .test-page {
-  height: calc(100vh - 5vh); /* 뷰포트 높이의 100% */
+  height: calc(100vh - 5vh);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,7 +79,7 @@
   text-align: center;
 }
 
-.image-wrapper {
+.question-image-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -89,4 +89,30 @@
 .question-image {
   width: 100%;
   border-radius: 10px;
+}
+
+.test-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+}
+
+.test-button {
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.test-button:hover {
+  background-color: #735446;
+  color: white;
 }
