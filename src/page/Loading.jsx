@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from '../hook/useRouter';
-import HANA_LOGO from '../image/hana_logo.png';
-import GBN_LOGO from '../image/gbn_logo.png';
-import SNAKE from '../image/snake.png';
+import FOX from '../image/animal/fox.png';
+import DOLPHIN from '../image/animal/dolphin.png';
+import CAT from '../image/animal/cat.png';
+import PANDA from '../image/animal/panda.png';
 
-const images = [HANA_LOGO, GBN_LOGO, SNAKE];
+const images = [FOX, DOLPHIN, CAT, PANDA];
 
 export default function Loading() {
   const [index, setIndex] = useState(0);

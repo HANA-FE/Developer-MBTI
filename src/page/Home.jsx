@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
 
   const QUESTION_LENGTH = 12;
-  const cnt = 5;
+  const cnt = 8;
 
   return (
     <div>
