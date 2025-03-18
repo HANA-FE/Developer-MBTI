@@ -18,6 +18,7 @@
   border-radius: 20px;
   font-size: 20px;
 }
+
 .header {
   height: 5vh;
   position: sticky;
@@ -52,4 +53,40 @@
   display: flex;
   align-items: center;
   gap: 10px; /* 아이콘 간격 조정 */
+}
+
+/* Test 페이지 스타일 */
+.test-page {
+  height: calc(100vh - 5vh); /* 뷰포트 높이의 100% */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.question-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+}
+
+.question-text {
+  color: white;
+  font-size: 1.7em;
+  line-height: 1.5;
+  white-space: pre-line;
+  word-break: keep-all;
+  text-align: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+}
+
+.question-image {
+  width: 100%;
+  border-radius: 10px;
 }
