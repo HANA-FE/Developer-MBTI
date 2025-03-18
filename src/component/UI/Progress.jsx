@@ -1,15 +1,17 @@
-export default function Progress({ width, value = 100 }) {
+import Cat from '../../image/homeCat.png';
+
+export default function Progress({ value = 25, cat = true }) {
   return (
-    <div className="progress progress-line">
+    <div className={`progress progress-line${cat ? ' cat' : ''}`}>
       <div
         className="progress-bar"
         role="progressbar"
-        style={{ width: `${width}%`, backgroundColor: 'var(--color-main-deep)' }}
+        style={{ width: `${value}%` }}
         aria-valuenow={value}
         aria-valuemin="0"
         aria-valuemax="100"
       >
-        {value} %
+        {Math.min(~~value, 100)}%{cat && <img className="cat" src={Cat} alt="cat" />}
       </div>
     </div>
   );

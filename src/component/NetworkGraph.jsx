@@ -8,6 +8,7 @@ const ROTATION_SPEED = 0.0006;
 export default function NetworkGraph() {
   const divRef = useRef(null);
   const svgRef = useRef(null);
+  const aniRef = useRef(null);
   const angle = useRef(0);
 
   // NOTE 드래그 이벤트 핸들러
@@ -28,82 +29,57 @@ export default function NetworkGraph() {
   };
 
   // NOTE 포스 시뮬레이션 설정
-  const createSimulation = (width, height) => {
+  useEffect(() => {
+    if (!svgRef.current || !divRef.current) return;
+
+    const svg = d3.select(svgRef.current);
+    const width = divRef.current.offsetWidth;
+    const height = Math.min(500, width);
     const centerX = width / 2;
     const centerY = height / 2;
-    return d3
+    svg.attr('width', width).attr('height', height); // 초기 크기 설정
+
+    NODES.forEach(node => {
+      node.x = centerX;
+      node.y = centerY;
+    });
+
+    svg.selectAll('*').remove();
+
+    const simulation = d3
       .forceSimulation(NODES)
       .force(
         'link',
         d3
           .forceLink(LINKS)
           .id(d => d.id)
-          .distance(100)
+          .distance(40)
           .strength(0.1)
       )
       .force('charge', d3.forceManyBody().strength(-80))
       .force('center', d3.forceCenter(centerX, centerY))
-      .force('collide', d3.forceCollide().radius(Math.min(window.innerWidth, 100)))
+      .force('collide', d3.forceCollide().radius(Math.min(window.innerWidth, 80)))
       .force('radial', d3.forceRadial(0, centerX, centerY));
-  };
-
-  useEffect(() => {
-    if (!svgRef.current) return;
-
-    const svg = d3.select(svgRef.current);
-    const width = +svg.attr('width');
-    const height = +svg.attr('height');
-    const centerX = width / 2;
-    const centerY = height / 2;
-    const starColors = [
-      '#e4e6e7', // 거의 흰색
-    ];
-
-    // NOTE 노드들을 원의 중심에서 시작하도록 초기 위치 설정
-    NODES.forEach(node => {
-      node.x = centerX;
-      node.y = centerY;
-    });
-
-    // NOTE 기존 그래프 내용 클리어
-    svg.selectAll('*').remove();
-
-    // NOTE 색 및 그라데이션 설정
-    const defs = svg.append('defs');
-
-    starColors.forEach((color, index) => {
-      const gradientId = `gradient-${index}`;
-      const gradient = defs
-        .append('linearGradient')
-        .attr('id', gradientId)
-        .attr('x1', '0%')
-        .attr('y1', '0%')
-        .attr('x2', '100%')
-        .attr('y2', '100%');
-
-      gradient.append('stop').attr('offset', '0%').attr('stop-color', d3.color(color).brighter(1).toString());
-      gradient.append('stop').attr('offset', '100%').attr('stop-color', d3.color(color).darker(1).toString());
-    });
-
-    // NOTE 포스 시뮬레이션 설정
-    const simulation = createSimulation(width, height);
 
     const updateGraphSize = () => {
-      const { innerHeight } = window;
-      let [width, height] = [divRef.current.offsetWidth, Math.min(500, innerHeight)];
-      svg.attr('width', width).attr('height', height);
+      const newWidth = divRef.current.offsetWidth;
+      const newHeight = Math.min(500, window.innerHeight);
+
+      svg
+        .attr('width', newWidth)
+        .attr('height', newHeight)
+        .attr('viewBox', `0 0 ${width} ${height}`)
+        .attr('preserveAspectRatio', 'xMidYMid meet');
 
       const newCenterX = width / 2;
-      const newCenterY = height / 1.7;
+      const newCenterY = height / 1.8;
 
       simulation.force('center', d3.forceCenter(newCenterX, newCenterY));
-      simulation.alphaTarget(0.3).restart();
+      simulation.alpha(0.3).restart();
     };
-
     // NOTE 뷰포트 크기 변경 시 그래프 크기 업데이트
     window.addEventListener('resize', updateGraphSize);
     updateGraphSize();
-
     // NOTE 드래그 기능을 위한 함수
     const drag = createDragHandler(simulation, width, height);
 
@@ -126,7 +102,7 @@ export default function NetworkGraph() {
       .text(d => d.id)
       .style('font-size', '0.875rem')
       .style('fill', '#d9d9d9')
-      .style('cursor', 'pointer')
+      .style('cursor', 'grab')
       .attr('text-anchor', 'middle')
       .call(drag);
 
@@ -152,15 +128,19 @@ export default function NetworkGraph() {
       });
 
       simulation.nodes(NODES);
-      simulation.alpha(1).restart();
+      simulation.alpha(0.1).restart(); // 너무 세게 리스타트 하지 않도록 수정
 
-      requestAnimationFrame(rotateGraph);
+      aniRef.current = requestAnimationFrame(rotateGraph);
     };
 
     rotateGraph();
+
     return () => {
       window.removeEventListener('resize', updateGraphSize);
-      svg.selectAll('*').remove();
+      if (aniRef.current) {
+        cancelAnimationFrame(aniRef.current);
+      }
+      aniRef.current = null;
     };
   }, []);
 
