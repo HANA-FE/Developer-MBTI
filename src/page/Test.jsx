@@ -3,10 +3,18 @@ import '../../style/index.css';
 import QuestionText from '../component/UI/QuestionText';
 import QuestionImage from '../component/UI/QuestionImage';
 const Test = () => {
+  const id = 12;
   return (
-    <div>
-      <QuestionText questionId={1} />
-      <QuestionImage questionId={1} />
+    <div className="test-page">
+      {/* 질문 영역 */}
+      <div className="question-wrapper">
+        <QuestionText questionId={id} />
+      </div>
+
+      {/* 이미지 영역 */}
+      <div className="image-wrapper">
+        <QuestionImage questionId={id} />
+      </div>
     </div>
   );
 };
