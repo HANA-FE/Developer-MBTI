@@ -17,7 +17,7 @@ export default function Home() {
           alignItems: 'center',
         }}
       >
-        <Progress value={(5 / 12) * 100} cat />
+        <Progress value={(5 / 12) * 100} text="5/12" cat />
         <NetworkGraph />
       </div>
       <Button type="start-button" onClick={() => router.push('/loading')} text="시작하기" />

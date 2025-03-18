@@ -47,9 +47,13 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   white-space: nowrap;
   overflow: visible;
+  border-radius: 8px;
+  margin-top: 20px;
   .progress-bar {
     position: relative;
     background-color: var(--color-main-deep);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
   .cat {
     position: absolute;

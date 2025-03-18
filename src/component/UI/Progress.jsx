@@ -1,6 +1,6 @@
 import Cat from '../../image/homeCat.png';
 
-export default function Progress({ value = 25, cat = true }) {
+export default function Progress({ value = 25, cat = true, text = `${~~value}%` }) {
   return (
     <div className={`progress progress-line${cat ? ' cat' : ''}`}>
       <div
@@ -11,7 +11,8 @@ export default function Progress({ value = 25, cat = true }) {
         aria-valuemin="0"
         aria-valuemax="100"
       >
-        {Math.min(~~value, 100)}%{cat && <img className="cat" src={Cat} alt="cat" />}
+        {text}
+        {cat && <img className="cat" src={Cat} alt="cat" />}
       </div>
     </div>
   );
