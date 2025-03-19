@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { debounce } from 'lodash';
 // lib
 import { copyToClipboard } from '@/src/lib';
 // constant
@@ -11,6 +12,10 @@ const Result = () => {
   const { name, result } = location.state || {};
 
   const currentResult = RESULT_INFO.find(info => info.mbti === result);
+
+  const debouncedCopy = debounce(async () => await copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL), 500, {
+    leading: true,
+  });
 
   return (
     <div className="result-page">
@@ -39,11 +44,7 @@ const Result = () => {
           </div>
 
           <div className="result-button-wrapper">
-            <Button
-              text="테스트 공유하기"
-              onClick={() => copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL)}
-              type="result-button-style"
-            />
+            <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
             <br />
 
             <Button
