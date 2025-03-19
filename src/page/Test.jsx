@@ -4,11 +4,12 @@ import { useLocation } from 'react-router-dom';
 import { useInternalRouter } from '../hook/useInternalRouter';
 // style
 import '@/style/index.css';
+// constant
+import { QUESTION } from '@/src/constant';
 // component
 import Button from '@/src/component/UI/Button';
 import QuestionText from '@/src/component/UI/QuestionText';
 import QuestionImage from '@/src/component/UI/QuestionImage';
-import QUESTION from '@/src/constant/Question';
 import Progress from '@/src/component/UI/Progress';
 
 const Test = () => {

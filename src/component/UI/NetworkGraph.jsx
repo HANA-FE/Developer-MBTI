@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { drag as d3drag } from 'd3';
 // constant
-import { NODES, LINKS } from '@/src/constant/animals';
+import { NODES, LINKS } from '@/src/constant';
 
 const ROTATION_SPEED = 0.0006;
 
