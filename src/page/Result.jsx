@@ -14,24 +14,34 @@ const Result = () => {
 
   return (
     <div className="result-page">
-      <h1>당신의 개발자 유형은?</h1>
       {currentResult ? (
         <div className="result-type">
-          <h2>{currentResult.name}</h2>
-          <div className="hashtags">
-            {currentResult.hashTag.map((hashtag, index) => (
-              <span key={index} className="hashtag">
-                {hashtag}
-              </span>
-            ))}
-          </div>
-          <div className="content">
-            {currentResult.content.map((content, index) => (
-              <p key={index}>{content}</p>
-            ))}
-          </div>
-          <div className="image">
+          <div className="result-image-wrapper">
             <img src={currentResult.image} alt={currentResult.name} />
+          </div>
+          <h2 className="result-title">{currentResult.name}</h2>
+          <div className="hashTag-wrapper">
+            {currentResult.hashTag.map((hashtag, index) => (
+              <div key={index} className="hashTag">
+                {hashtag}
+              </div>
+            ))}
+          </div>
+          <div className="content-box">
+            {currentResult.content.map((content, index) => (
+              <p key={index} className="content-item">
+                ✅{content}
+              </p>
+            ))}
+          </div>
+
+          <div className="action-box">
+            <div className="action-item">
+              <Button text="결과 공유하기" type="action-button" />
+            </div>
+            <div className="action-item">
+              <Button text="이미지 다운로드" type="action-button" />
+            </div>
           </div>
         </div>
       ) : (
