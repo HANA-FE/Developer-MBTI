@@ -1,16 +1,15 @@
-import Button from '../component/UI/Button';
-import '../../style/index.css';
 import { useLocation } from 'react-router-dom';
-import { RESULT_INFO } from '../constant/result';
+// lib
+import { copyToClipboard } from '@/src/lib';
+// constant
+import { RESULT_INFO } from '@/src/constant/result';
+// component
+import Button from '@/src/component/UI/Button';
 
 const Result = () => {
   const location = useLocation();
-  console.log('location.state:', location.state); // 전체 state 객체 확인
-
   const { name, result } = location.state || {};
-  console.log('전달받은 result:', result); // result 값 확인
 
-  // resultInfo에서 전달받은 mbti에 해당하는 항목을 찾아서 변수에 저장
   const currentResult = RESULT_INFO.find(info => info.mbti === result);
 
   return (
@@ -41,9 +40,9 @@ const Result = () => {
 
           <div className="result-button-wrapper">
             <Button
-              text="결과 공유하기"
-              type="result-button-style {
-"
+              text="테스트 공유하기"
+              onClick={() => copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL)}
+              type="result-button-style"
             />
             <br />
 

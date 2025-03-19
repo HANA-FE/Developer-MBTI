@@ -1,13 +1,21 @@
 import { BrowserRouter } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
 import Routes from './page/Route';
 import Layout from './component/layout/Layout';
 
+const snackbarOptions = {
+  maxSnack: 2,
+  autoHideDuration: 1500,
+  anchorOrigin: { vertical: 'top', horizontal: 'center' },
+};
 function App() {
   return (
     <BrowserRouter>
-      <Layout>
-        <Routes />
-      </Layout>
+      <SnackbarProvider {...snackbarOptions}>
+        <Layout>
+          <Routes />
+        </Layout>
+      </SnackbarProvider>
     </BrowserRouter>
   );
 }
