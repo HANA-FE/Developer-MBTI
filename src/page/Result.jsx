@@ -2,6 +2,7 @@ import Button from '../component/UI/Button';
 import '../../style/index.css';
 import { useLocation } from 'react-router-dom';
 import { resultInfo } from '../constant/result';
+import { useInternalRouter } from '@/src/hook/useInternalRouter';
 const Result = () => {
   const location = useLocation();
   console.log('location.state:', location.state); // 전체 state 객체 확인
@@ -12,6 +13,7 @@ const Result = () => {
   // resultInfo에서 전달받은 mbti에 해당하는 항목을 찾아서 변수에 저장
   const currentResult = resultInfo.find(info => info.mbti === result);
 
+  const router = useInternalRouter();
   return (
     <div className="result-page">
       {currentResult ? (

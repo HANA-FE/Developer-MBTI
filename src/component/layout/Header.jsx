@@ -1,6 +1,5 @@
 import { Bell, Search } from 'lucide-react';
-import React from 'react';
-import '../../../style/index.css';
+import '@/style/index.css';
 
 const Header = () => {
   return (
@@ -9,7 +8,7 @@ const Header = () => {
       <div className="w-6"></div>
 
       {/* 중앙 텍스트 */}
-      <h1 className="title">
+      <h1 className="header-title">
         개발놈<span className="bold">TEST</span>
       </h1>
 

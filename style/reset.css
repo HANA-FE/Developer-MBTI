@@ -1,3 +1,24 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-100: #edf0f3;
+  --color-main: #a57865;
+  --color-main-light: #b79383;
+  --color-main-deep: #735446;
+  --z-index-header: 800;
+  --z-index-home-cat: 200;
+  --z-index-progress-cat: 100;
+  --z-index-start-button: 400;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -58,19 +79,17 @@ textarea,
 select {
   font: inherit;
 }
-:root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-gray-100: #edf0f3;
-  --color-main: #a57865;
-  --color-main-light: #b79383;
-  --color-main-deep: #735446;
+
+button:active,
+button:focus {
+  outline: none;
 }
 
 .container {
   max-width: 576px;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 0;
   background-color: var(--color-main-light);
+  overflow-y: scroll;
 }
