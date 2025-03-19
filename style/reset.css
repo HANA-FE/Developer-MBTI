@@ -2,6 +2,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-100: #edf0f3;
+  --color-gray-500: #9d9d9d;
   --color-main: #a57865;
   --color-main-light: #b79383;
   --color-main-deep: #735446;
@@ -78,6 +79,14 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+input {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 button:active,

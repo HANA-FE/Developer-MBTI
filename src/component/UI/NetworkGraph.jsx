@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { drag as d3drag } from 'd3';
 // constant
-import { NODES, LINKS } from '@/constant/animals';
+import { NODES, LINKS } from '@/src/constant';
 
 const ROTATION_SPEED = 0.0006;
 
@@ -38,6 +38,7 @@ export default function NetworkGraph() {
     const height = Math.min(500, width);
     const centerX = width / 2;
     const centerY = height / 2;
+    console.log(width, height);
     svg.attr('width', width).attr('height', height); // 초기 크기 설정
 
     NODES.forEach(node => {

@@ -17,8 +17,8 @@ import wolf from '../image/animal/wolf.png';
 
 export const RESULT_INFO = [
   {
-    mbti : 'ISFP',
-    name: 'ISFP 자유로운 코알라',
+    mbti: 'ISFP',
+    name: '자유로운 코알라',
     hashTag: ['🎨 창의력 폭발', '🖌️ 감각적인 UX 장인', '🛠️ 새로운 기술? 얼른 써보자!'],
     content: [
       '문제 해결도 아트다! 🎭 창의적인 접근으로 사용자 경험을 업그레이드하는데 진심인 타입',
@@ -28,8 +28,8 @@ export const RESULT_INFO = [
     image: koala,
   },
   {
-    mbti : 'ISFJ',
-    name: 'ISFJ 정리왕 코뿔소',
+    mbti: 'ISFJ',
+    name: '정리왕 코뿔소',
     hashTag: ['✅ 내가 맡은 일은 끝까지!', '✨ 디테일 장인', '🏗️ 안정적인 프로젝트 메이커'],
     content: [
       '세세한 부분까지 놓치지 않는 완벽주의자! 코드 안정성과 신뢰도를 지키는 든든한 팀원.',
@@ -39,8 +39,8 @@ export const RESULT_INFO = [
     image: rhinoceros,
   },
   {
-    mbti : 'ISTP',
-    name: 'ISTP 냉철한 뱀',
+    mbti: 'ISTP',
+    name: '냉철한 뱀',
     hashTag: ['🧠 논리로 뚝딱', '🏕️ 혼자서도 잘해요', '🚀 위기 대응 능력 최강'],
     content: [
       '"이거 왜 이렇게 돌아가는 거지?" 🔬 분석 시작하면 끝장을 보는 타입.',
@@ -50,8 +50,8 @@ export const RESULT_INFO = [
     image: snake,
   },
   {
-    mbti : 'ISFJ',
-    name: 'ISTJ 원칙주의자 거북이',
+    mbti: 'ISFJ',
+    name: '원칙주의자 거북이',
     hashTag: ['📅 계획대로 된다', '📊 논리적 판단 끝판왕', '🤝 약속은 반드시 지킨다'],
     content: [
       '"이 프로젝트, 내 손에서 완벽하게 끝낸다." 체계적인 접근과 철저한 계획으로 개발 진행!',
@@ -61,8 +61,8 @@ export const RESULT_INFO = [
     image: turtle,
   },
   {
-    mbti : 'INFP',
-    name: 'INFP 감성적이고 고양이',
+    mbti: 'INFP',
+    name: '감성적이고 고양이',
     hashTag: ['🎨 감성 코딩', '💡 아이디어 뱅크', '🌿 몰입의 신'],
     content: [
       '코드에 감정을 담으며, 영감을 받으면 밤새 몰입 할지도?',
@@ -72,8 +72,8 @@ export const RESULT_INFO = [
     image: cat,
   },
   {
-    mbti : 'INFJ',
-    name: 'INFJ 생각 깊은 팬더',
+    mbti: 'INFJ',
+    name: '생각 깊은 팬더',
     hashTag: ['🤝 이해와 공감', '🏗️ 큰 그림 설계', '✨ 완성도 집착증'],
     content: [
       '팀원들의 성장을 돕고, 개발을 통해 더 나은 세상을 만들고 싶어 한다.',
@@ -83,8 +83,8 @@ export const RESULT_INFO = [
     image: panda,
   },
   {
-    mbti : 'INTP',
-    name: 'INTP 탐구하는 부엉이',
+    mbti: 'INTP',
+    name: '탐구하는 부엉이',
     hashTag: ['🔍 기술 덕후', '🧠 알고리즘 탐험가', '📖 끝없는 호기심'],
     content: [
       '새로운 기술을 파헤치는 것을 좋아하며, 깊이 있는 지식을 쌓는 데 집중한다.',
@@ -94,8 +94,8 @@ export const RESULT_INFO = [
     image: owl,
   },
   {
-    mbti : 'INTJ',
-    name: 'INTJ 치밀한 호랑이',
+    mbti: 'INTJ',
+    name: '치밀한 호랑이',
     hashTag: ['🏆 전략적 사고', '✨ 완벽주의자', '📐 결과로 증명'],
     content: [
       '시스템 설계를 치밀하게 계획하고, 프로젝트를 효율적으로 이끌어나간다.',
@@ -105,8 +105,8 @@ export const RESULT_INFO = [
     image: tiger,
   },
   {
-    mbti : 'ESFP',
-    name: 'ESFP 실험정신 충만 여우',
+    mbti: 'ESFP',
+    name: '실험정신 충만 여우',
     hashTag: ['🔥 일단 해보자', '🎨 UIUX 감각', '😂 개발도 재밌어야지'],
     content: [
       '새로운 기술이 나오면 일단 써보고 본다. (실험정신 충만)',
@@ -116,8 +116,8 @@ export const RESULT_INFO = [
     image: fox,
   },
   {
-    mbti : 'ESFJ',
-    name: 'ESFJ 팀워크 최강자 코끼리',
+    mbti: 'ESFJ',
+    name: '팀워크 최강자 코끼리',
     hashTag: ['🤝 팀워크 최강', '📜 소통의 달인', '😊 개발은 함께하는 거야'],
     content: [
       '협업을 최우선으로 하며, 팀원들의 의견을 존중한다.',
@@ -127,8 +127,8 @@ export const RESULT_INFO = [
     image: elephant,
   },
   {
-    mbti : 'ESTP',
-    name: 'ESTP 문제해결 머신 표범',
+    mbti: 'ESTP',
+    name: '문제해결 머신 표범',
     hashTag: ['🚀 실전형 개발자', '🔧 디버깅 장인', '⚡ 일단 고쳐보자'],
     content: [
       '디버깅 능력이 뛰어나며, 문제를 빠르게 파악하고 해결하는 능력이 탁월함.',
@@ -138,8 +138,8 @@ export const RESULT_INFO = [
     image: leopard,
   },
   {
-    mbti : 'ESTJ',
-    name: 'ESTJ 원칙주의 리더 사자',
+    mbti: 'ESTJ',
+    name: '원칙주의 리더 사자',
     hashTag: ['📝 개발도 체계적으로', '⏳ 프로세스 중시', '🔍 원칙 수호자'],
     content: [
       '코드 컨벤션, 프로젝트 일정, 문서화를 철저하게 지키는 타입.',
@@ -149,8 +149,8 @@ export const RESULT_INFO = [
     image: lion,
   },
   {
-    mbti : 'ENFP',
-    name: 'ENFP 에너자이저 돌고래',
+    mbti: 'ENFP',
+    name: '에너자이저 돌고래',
     hashTag: ['🎇 아이디어 뱅크', '💡 분위기 메이커', '🚀 새로운 게 좋아'],
     content: [
       '무에서 유를 창조하는 게 재밌지!',
@@ -160,8 +160,8 @@ export const RESULT_INFO = [
     image: dolphin,
   },
   {
-    mbti : 'ENFJ',
-    name: 'ENFJ 팔방미인형 강아지',
+    mbti: 'ENFJ',
+    name: '팔방미인형 강아지',
     hashTag: ['❤️ 감성 개발자', '🏆 승부사', '🤝 천생 리더'],
     content: [
       '야, 우리 이렇게 해보는 거 어때? 하며 의견을 조율하는 걸 즐김.',
@@ -171,8 +171,8 @@ export const RESULT_INFO = [
     image: dog,
   },
   {
-    mbti : 'ENTP',
-    name: 'ENTP 토론 마스터 앵무새',
+    mbti: 'ENTP',
+    name: '토론 마스터 앵무새',
     hashTag: ['🔄 만능 해결사', '🧠 토론 무새', '💡 생각 뿜뿜'],
     content: [
       '이게 더 효율적이고 재밌지 않음? 같은 생각이 끊임없이 샘솟음.',
@@ -182,8 +182,8 @@ export const RESULT_INFO = [
     image: parrot,
   },
   {
-    mbti : 'ENTJ',
-    name: 'ENTJ 전략가 늑대',
+    mbti: 'ENTJ',
+    name: '전략가 늑대',
     hashTag: ['🏗️ 이끄는 게 적성', '⚙️ 시스템 최적화', '🐺 루트 자동 설계'],
     content: [
       '프로젝트의 방향성을 자연스럽게 잡아주는 타입.',
