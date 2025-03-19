@@ -23,7 +23,7 @@ function Home() {
       </div>
 
       <div className="Home-button">
-        <Button onClick={() => router.push('/test')} type="start-button" text="테스트 시작하기" />
+        <Button onClick={() => router.push('/name')} type="start-button" text="테스트 시작하기" />
       </div>
     </div>
   );

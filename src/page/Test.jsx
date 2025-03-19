@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 // hook
 import { useInternalRouter } from '../hook/useInternalRouter';
 // style
@@ -11,7 +12,17 @@ import QUESTION from '@/src/constant/Question';
 import Progress from '@/src/component/UI/Progress';
 
 const Test = () => {
+  const location = useLocation();
   const router = useInternalRouter();
+
+  const { name } = location.state || {};
+
+  // 이름 입력 안했을 경우 name입력 칸으로
+  useEffect(() => {
+    console.log(name);
+    if (!name) router.push('/name');
+  }, [name, router]);
+
   // id 1부터 시작, QUESTION의 길이 : 13, QUESTION 0번째의 값에는 NULL 값이 들어있음
   const [currentId, setCurrentId] = useState(1);
   const [answers, setAnswers] = useState({
@@ -50,7 +61,7 @@ const Test = () => {
     // 마지막 질문일 경우
     else {
       const result = calculateResult(answers);
-      router.push('/loading', { state: { result } });
+      router.push('/loading', { state: { name, result } });
     }
   };
 
