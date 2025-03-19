@@ -1,16 +1,16 @@
 // 이미지 import
-import Q1 from '../image/question/Q1.png';
-import Q2 from '../image/question/Q2.png';
-import Q3 from '../image/question/Q3.png';
-import Q4 from '../image/question/Q4.png';
-import Q5 from '../image/question/Q5.png';
-import Q6 from '../image/question/Q6.png';
-import Q7 from '../image/question/Q7.png';
-import Q8 from '../image/question/Q8.png';
-import Q9 from '../image/question/Q9.png';
-import Q10 from '../image/question/Q10.png';
-import Q11 from '../image/question/Q11.png';
-import Q12 from '../image/question/Q12.png';
+import Q1 from '@/src/image/question/Q1.png';
+import Q2 from '@/src/image/question/Q2.png';
+import Q3 from '@/src/image/question/Q3.png';
+import Q4 from '@/src/image/question/Q4.png';
+import Q5 from '@/src/image/question/Q5.png';
+import Q6 from '@/src/image/question/Q6.png';
+import Q7 from '@/src/image/question/Q7.png';
+import Q8 from '@/src/image/question/Q8.png';
+import Q9 from '@/src/image/question/Q9.png';
+import Q10 from '@/src/image/question/Q10.png';
+import Q11 from '@/src/image/question/Q11.png';
+import Q12 from '@/src/image/question/Q12.png';
 
 const QUESTION = [
   null, // 0번 인덱스는 비워두어 1번부터 시작하도록 함
@@ -70,7 +70,7 @@ const QUESTION = [
   },
   {
     type: 'TF',
-    text: '팀원이 버그를 못 고쳐서 울고 있는데, 알고 보니 ;(세미콜론) 문제였다. \n 이 때 나는?',
+    text: '팀원이 버그를 못 고쳐서 울고 있는데, \n알고 보니 ;(세미콜론) 문제였다. \n 이 때 나는?',
     image: Q7,
     answers: [
       { type: 'T', text: '"세미콜론 빠뜨렸잖아;;;;;;;;" \n(로그 확인하고 냉정하게 지적)' },
@@ -100,8 +100,8 @@ const QUESTION = [
     text: '지금 한창 아이디어 회의 중이다. \n 이때 나는?',
     image: Q10,
     answers: [
-      { type: 'S', text: '여러 데이터들을 분석한 뒤 \n의견을 제시한다.' },
-      { type: 'N', text: '재밌는 아이디어가 떠오르면 \n즉흥적으로 제시한다.' },
+      { type: 'S', text: '여러 데이터들을 분석한 뒤 \n의견을 제시한다' },
+      { type: 'N', text: '재밌는 아이디어가 떠오르면 \n즉흥적으로 제시한다' },
     ],
   },
   {
@@ -109,7 +109,7 @@ const QUESTION = [
     text: '최신 개발 트렌드를 공부할 때 \n 당신은?',
     image: Q11,
     answers: [
-      { type: 'S', text: '바로 써 먹을 수 있는 기술들이 유용하지.' },
+      { type: 'S', text: '바로 써 먹을 수 있는 기술들이 유용하지~' },
       { type: 'N', text: '당장은 못 써도 혁신적인 기술이 재밌어!' },
     ],
   },

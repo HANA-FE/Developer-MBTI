@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import FOX from '../image/animal/fox.png';
-import DOLPHIN from '../image/animal/dolphin.png';
-import CAT from '../image/animal/cat.png';
-import PANDA from '../image/animal/panda.png';
+import { useLocation } from 'react-router-dom';
+// hook
+import { useInternalRouter } from '../hook/useInternalRouter';
+// image
+import FOX from '@/src/image/animal/fox.png';
+import DOLPHIN from '@/src/image/animal/dolphin.png';
+import CAT from '@/src/image/animal/cat.png';
+import PANDA from '@/src/image/animal/panda.png';
 
 const images = [FOX, DOLPHIN, CAT, PANDA];
 
 export default function Loading() {
   const [index, setIndex] = useState(0);
-  const navigate = useNavigate();
   const location = useLocation();
   const { result } = location.state || {};
+  const router = useInternalRouter();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,9 +26,9 @@ export default function Loading() {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate('/result', { state: { result } });
+      router.push('/result', { state: { result } });
     }, 2000);
-  }, [navigate, result]);
+  }, [router, result]);
 
   return (
     <div className="loading-container">

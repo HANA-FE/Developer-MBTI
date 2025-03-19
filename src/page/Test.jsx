@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// hook
+import { useInternalRouter } from '../hook/useInternalRouter';
 // style
-import '../../style/index.css';
-// components
-import Button from '../component/UI/Button';
-import QuestionText from '../component/UI/QuestionText';
-import QuestionImage from '../component/UI/QuestionImage';
-import QUESTION from '../constant/Question';
-import Progress from '../component/UI/Progress';
+import '@/style/index.css';
+// component
+import Button from '@/src/component/UI/Button';
+import QuestionText from '@/src/component/UI/QuestionText';
+import QuestionImage from '@/src/component/UI/QuestionImage';
+import QUESTION from '@/src/constant/Question';
+import Progress from '@/src/component/UI/Progress';
 
 const Test = () => {
-  const navigate = useNavigate();
+  const router = useInternalRouter();
   // id 1부터 시작, QUESTION의 길이 : 13, QUESTION 0번째의 값에는 NULL 값이 들어있음
   const [currentId, setCurrentId] = useState(1);
   const [answers, setAnswers] = useState({
@@ -49,9 +50,7 @@ const Test = () => {
     // 마지막 질문일 경우
     else {
       const result = calculateResult(answers);
-      navigate('/loading', {
-        state: { result },
-      });
+      router.push('/loading', { state: { result } });
     }
   };
 
