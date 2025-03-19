@@ -293,16 +293,14 @@
   text-align: center;
 }
 
-/* content 스타일 */
 .result-content {
   margin-top: 20px;
 }
 
-/* content-item 스타일 */
 .result-content-item {
-  text-align: left; /* 왼쪽 정렬 */
-  margin-bottom: 10px; /* 각 항목 간 간격 */
-  font-size: 16px; /* 글자 크기 */
+  text-align: left; 
+  margin-bottom: 10px; 
+  font-size: 16px; 
 }
 
 .result-content-box {
@@ -317,8 +315,8 @@
 
 .result-button-wrapper {
   display: flex;
-  flex-direction: column; /* 버튼들을 세로로 배치 */
-  align-items: center; /* 버튼들을 가운데 정렬 */
+  flex-direction: column;
+  align-items: center; 
   margin-top: 20px;
   padding: 10px;
   border-radius: 10px;
