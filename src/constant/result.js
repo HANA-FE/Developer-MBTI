@@ -15,7 +15,7 @@ import tiger from '../image/animal/tiger.png';
 import turtle from '../image/animal/turtle.png';
 import wolf from '../image/animal/wolf.png';
 
-export const resultInfo = [
+export const RESULT_INFO = [
   {
     mbti : 'ISFP',
     name: 'ISFP 자유로운 코알라',
