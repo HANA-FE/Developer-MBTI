@@ -29,21 +29,27 @@ const Result = () => {
               </div>
             ))}
           </div>
-          <div className="content-box">
+          <div className="result-content-box">
             {currentResult.content.map((content, index) => (
-              <p key={index} className="content-item">
+              <p key={index} className="result-content-item">
                 ✅{content}
               </p>
             ))}
           </div>
 
-          <div className="action-box">
-            <div className="action-item">
-              <Button text="결과 공유하기" type="action-button" />
-            </div>
-            <div className="action-item">
-              <Button text="이미지 다운로드" type="action-button" />
-            </div>
+          <div className="result-button-wrapper">
+            <Button
+              text="결과 공유하기"
+              type="result-button-style {
+"
+            />
+            <br />
+
+            <Button
+              text="이미지 다운로드"
+              type="result-button-style {
+"
+            />
           </div>
         </div>
       ) : (
