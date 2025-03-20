@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { enqueueSnackbar } from 'notistack';
 // hook
 import { useInternalRouter } from '../hook/useInternalRouter';
 // component
@@ -9,7 +10,13 @@ import Button from '@/src/component/UI/Button';
 export default function InputPage() {
   const [name, setName] = useState('');
   const router = useInternalRouter();
-  const goTest = useCallback(() => router.push('/test', { state: { name } }), [name, router]);
+  const goTest = useCallback(() => {
+    if (!name.length) {
+      enqueueSnackbar('이름을 입력해주세요!');
+      return;
+    }
+    router.push('/test', { state: { name } });
+  }, [name, router]);
 
   return (
     <div className="inputPage-wrapper">
