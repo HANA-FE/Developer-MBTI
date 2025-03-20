@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 // hook
 import { useInternalRouter } from '../hook/useInternalRouter';
 // component
@@ -9,6 +9,7 @@ import Button from '@/src/component/UI/Button';
 export default function InputPage() {
   const [name, setName] = useState('');
   const router = useInternalRouter();
+  const goTest = useCallback(() => router.push('/test', { state: { name } }), [name, router]);
 
   return (
     <div className="inputPage-wrapper">
@@ -22,11 +23,15 @@ export default function InputPage() {
           if (value.length > 2) return;
           setName(value);
         }}
+        onKeyDown={({ key }) => {
+          if (key !== 'Enter') return;
+          if (0 < name.length && name.length <= 2) goTest();
+        }}
         value={name}
         placeholder="ex) 하나"
         maxLength="2"
       />
-      <Button onClick={() => router.push('/test', { state: { name } })} type="start-button" text="검사 시작" />
+      <Button onClick={goTest} type="start-button" text="검사 시작" />
     </div>
   );
 }

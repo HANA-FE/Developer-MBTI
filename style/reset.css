@@ -13,6 +13,7 @@
 }
 
 * {
+  cursor: url('./src/image/cursor.png'), auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   ::-webkit-scrollbar {
@@ -101,4 +102,18 @@ button:focus {
   padding: 0;
   background-color: var(--color-main-light);
   overflow-y: scroll;
+}
+.notistack-MuiContent-default {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  background-color: var(--color-main-deep) !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.notistack-MuiContent {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }

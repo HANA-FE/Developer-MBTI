@@ -20,7 +20,6 @@ const Test = () => {
 
   // 이름 입력 안했을 경우 name입력 칸으로
   useEffect(() => {
-    console.log(name);
     if (!name) router.push('/name');
   }, [name, router]);
 

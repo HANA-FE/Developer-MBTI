@@ -1,20 +1,25 @@
-import Button from '../component/UI/Button';
-import '../../style/index.css';
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
-import { RESULT_INFO } from '../constant/result';
+import { debounce } from 'lodash';
+// lib
+import { copyToClipboard, handleDownload } from '@/src/lib';
+// constant
+import { RESULT_INFO } from '@/src/constant/result';
+// component
+import Button from '@/src/component/UI/Button';
 
 const Result = () => {
   const location = useLocation();
-  console.log('location.state:', location.state); // 전체 state 객체 확인
-
   const { name, result } = location.state || {};
-  console.log('전달받은 result:', result); // result 값 확인
+  const resultRef = useRef(null);
 
-  // resultInfo에서 전달받은 mbti에 해당하는 항목을 찾아서 변수에 저장
   const currentResult = RESULT_INFO.find(info => info.mbti === result);
+  const debouncedCopy = debounce(async () => await copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL), 500, {
+    leading: true,
+  });
 
   return (
-    <div className="result-page">
+    <div className="result-page" ref={resultRef}>
       {currentResult ? (
         <div className="result-type">
           <div className="result-image-wrapper">
@@ -40,14 +45,13 @@ const Result = () => {
           </div>
 
           <div className="result-button-wrapper">
-            <Button
-              text="결과 공유하기"
-              type="result-button-style {
-"
-            />
+            <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
             <br />
 
             <Button
+              onClick={() => {
+                handleDownload(resultRef, name);
+              }}
               text="이미지 다운로드"
               type="result-button-style {
 "
