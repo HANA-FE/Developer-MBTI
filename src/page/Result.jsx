@@ -1,7 +1,8 @@
+import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { debounce } from 'lodash';
 // lib
-import { copyToClipboard } from '@/src/lib';
+import { copyToClipboard, handleDownload } from '@/src/lib';
 // constant
 import { RESULT_INFO } from '@/src/constant/result';
 // component
@@ -10,15 +11,15 @@ import Button from '@/src/component/UI/Button';
 const Result = () => {
   const location = useLocation();
   const { name, result } = location.state || {};
+  const resultRef = useRef(null);
 
   const currentResult = RESULT_INFO.find(info => info.mbti === result);
-
   const debouncedCopy = debounce(async () => await copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL), 500, {
     leading: true,
   });
 
   return (
-    <div className="result-page">
+    <div className="result-page" ref={resultRef}>
       {currentResult ? (
         <div className="result-type">
           <div className="result-image-wrapper">
@@ -48,6 +49,9 @@ const Result = () => {
             <br />
 
             <Button
+              onClick={() => {
+                handleDownload(resultRef, name);
+              }}
               text="이미지 다운로드"
               type="result-button-style {
 "

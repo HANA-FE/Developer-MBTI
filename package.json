@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "d3": "^7.9.0",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
     "lodash": "^4.17.21",
     "lucide-react": "^0.482.0",
     "notistack": "^3.0.2",
