@@ -2,6 +2,8 @@ import html2canvas from 'html2canvas';
 import saveAs from 'file-saver';
 import { enqueueSnackbar } from 'notistack';
 
+const IMAGE_ETC = '.png';
+
 export const handleDownload = async (ref, name, deviceInfo) => {
   if (!ref.current) return;
 
@@ -10,15 +12,15 @@ export const handleDownload = async (ref, name, deviceInfo) => {
   try {
     const div = ref.current;
     const canvas = await html2canvas(div, { scale: 2 });
-    const fileName = `${name}.png`;
+    const fileName = `${name}${IMAGE_ETC}`;
 
     canvas.toBlob(async blob => {
       if (blob !== null) {
-        if (isIOS && navigator.share) {
-          const idx = fileName.lastIndexOf('.');
-          const etc = fileName.slice(idx + 1);
-          const file = new File([blob], fileName, { type: `image/${etc}` });
-          await saveImageToGalleryWithShare(file, name);
+        const file = new File([blob], fileName, { type: `image/${IMAGE_ETC}` });
+        const shareObj = { title: '검사 결과 저장', text: fileName, files: [file] };
+
+        if (isIOS && navigator.share && navigator.canShare(shareObj)) {
+          await saveImageToGalleryWithShare(shareObj);
         } else if (isAOS) {
           const link = document.createElement('a');
           link.href = URL.createObjectURL(blob);
@@ -36,12 +38,9 @@ export const handleDownload = async (ref, name, deviceInfo) => {
   }
 };
 
-const saveImageToGalleryWithShare = async (file, fileName) => {
+const saveImageToGalleryWithShare = async shareObj => {
   try {
-    const shareObj = { title: '검사 결과 저장', text: fileName, files: [file] };
-    if (navigator.canShare(shareObj)) {
-      await navigator.share(shareObj);
-    }
+    await navigator.share(shareObj);
   } catch (error) {
     console.error('Error sharing image:', error);
   }
