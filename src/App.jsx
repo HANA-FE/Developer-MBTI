@@ -5,7 +5,7 @@ import Layout from './component/layout/Layout';
 
 const snackbarOptions = {
   maxSnack: 2,
-  autoHideDuration: 2000,
+  autoHideDuration: 1500,
   anchorOrigin: { vertical: 'top', horizontal: 'center' },
 };
 function App() {

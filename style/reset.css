@@ -13,7 +13,7 @@
 }
 
 * {
-  cursor: url('./src/image/cursor.png'), auto;
+  cursor: url('/src/image/cursor.cur'), auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   ::-webkit-scrollbar {
