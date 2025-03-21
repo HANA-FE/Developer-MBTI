@@ -56,13 +56,7 @@ const Result = () => {
           <div className="result-button-wrapper">
             <div className="button-row">
               <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
-              <Button
-                onClick={() => {
-                  handleDownload(resultRef, name);
-                }}
-                text="이미지 다운로드"
-                type="result-button-style"
-              />
+              <Button text="이미지 다운로드" onClick={downLoadImage} type="result-button-style" />
             </div>
             <Button
               onClick={() => {
