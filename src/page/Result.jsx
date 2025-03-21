@@ -27,7 +27,7 @@ const Result = () => {
     <div className="result-page">
       {currentResult ? (
         <>
-          <div ref={resultRef}>
+          <div className="result-wrapper" ref={resultRef}>
             <div className="result-type">
               <div className="result-image-wrapper">
                 <img src={currentResult.image} alt={currentResult.name} />
@@ -38,9 +38,9 @@ const Result = () => {
               </h2>
               <div className="hashTag-wrapper">
                 {currentResult.hashTag.map((hashtag, index) => (
-                  <div key={index} className="hashTag">
+                  <span key={index} className="hashTag">
                     {hashtag}
-                  </div>
+                  </span>
                 ))}
               </div>
               <div className="result-content-box">
