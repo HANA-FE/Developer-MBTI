@@ -222,12 +222,20 @@
 }
 
 .question-text {
-  color: white;
+  color: var(--color-white);
   font-size: 1.6em;
   line-height: 1.5;
   white-space: pre-line;
   text-align: center;
   max-height: 100%;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+
+  @media (max-width: 480px) {
+    font-size: 1.2em;
+    line-height: 1.4;
+  }
 }
 
 .question-image-wrapper {
@@ -257,13 +265,13 @@
 }
 
 .test-button {
-  background-color: white;
-  color: black;
+  background-color: var(--color-white);
+  color: var(--color-black);
   width: 100%;
   min-height: 60px;
   height: 8vh;
   max-height: 80px;
-  border: 2px solid black;
+  border: 2px solid var(--color-black);
   border-radius: 20px;
   font-size: 18px;
   transition: all 0.2s ease-in-out;
@@ -272,6 +280,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  @media (max-width: 480px) {
+    font-size: 0.8em;
+  }
   &:active {
     transform: translateY(2px);
   }
@@ -281,6 +294,8 @@
   background-color: var(--color-main-deep);
   color: white;
 }
+
+/* 테스트 스타일 끝 */
 
 .result-image-wrapper {
   display: flex;
