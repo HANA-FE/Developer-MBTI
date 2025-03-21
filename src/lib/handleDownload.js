@@ -7,7 +7,7 @@ const IMAGE_ETC = '.png';
 export const handleDownload = async (ref, name, deviceInfo) => {
   if (!ref.current) return;
 
-  const { isIOS, isAOS } = deviceInfo;
+  const { isIOS, isAOS, isChrome, isNaver } = deviceInfo;
 
   try {
     const div = ref.current;
@@ -19,7 +19,7 @@ export const handleDownload = async (ref, name, deviceInfo) => {
         const file = new File([blob], fileName, { type: `image/${IMAGE_ETC}` });
         const shareObj = { title: '검사 결과 저장', text: fileName, files: [file] };
 
-        if (isIOS && navigator.share && navigator.canShare(shareObj)) {
+        if (isIOS && !isChrome && !isNaver && navigator.share && navigator.canShare(shareObj)) {
           await saveImageToGalleryWithShare(shareObj);
         } else if (isAOS) {
           const link = document.createElement('a');
@@ -32,7 +32,6 @@ export const handleDownload = async (ref, name, deviceInfo) => {
         }
       }
     });
-    enqueueSnackbar('이미지가 저장 되었습니다!');
   } catch {
     enqueueSnackbar('이미지가 저장에 실패했습니다', { variant: 'error' });
   }
