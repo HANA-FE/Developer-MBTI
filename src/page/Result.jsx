@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { debounce } from 'lodash';
 // lib
+import { useInternalRouter } from '../hook/useInternalRouter';
 import { useDeviceInfo } from '../hook/useDeviceInfo';
 import { copyToClipboard, handleDownload } from '@/src/lib';
 // constant
@@ -14,6 +15,7 @@ const Result = () => {
   const { name, result } = location.state || {};
   const resultRef = useRef(null);
   const { deviceInfo } = useDeviceInfo();
+  const router = useInternalRouter();
 
   const currentResult = RESULT_INFO.find(info => info.mbti === result);
   const debouncedCopy = debounce(async () => await copyToClipboard(import.meta.env.VITE_CLIENT_BASE_URL), 500, {
@@ -52,9 +54,23 @@ const Result = () => {
           </div>
 
           <div className="result-button-wrapper">
-            <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
-            <br />
-            <Button onClick={downLoadImage} text="이미지 다운로드" type="result-button-style" />
+            <div className="button-row">
+              <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
+              <Button
+                onClick={() => {
+                  handleDownload(resultRef, name);
+                }}
+                text="이미지 다운로드"
+                type="result-button-style"
+              />
+            </div>
+            <Button
+              onClick={() => {
+                router.push('/');
+              }}
+              text="다시하기"
+              type="result-button-style"
+            />
           </div>
         </>
       ) : (
