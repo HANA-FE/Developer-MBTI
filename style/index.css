@@ -222,7 +222,7 @@
 }
 
 .question-text {
-  color: white;
+  color: var(--color-white);
   font-size: 1.6em;
   line-height: 1.5;
   white-space: pre-line;
@@ -257,13 +257,13 @@
 }
 
 .test-button {
-  background-color: white;
-  color: black;
+  background-color: var(--color-white);
+  color: var(--color-black);
   width: 100%;
   min-height: 60px;
   height: 8vh;
   max-height: 80px;
-  border: 2px solid black;
+  border: 2px solid var(--color-black);
   border-radius: 20px;
   font-size: 18px;
   transition: all 0.2s ease-in-out;
@@ -281,6 +281,8 @@
   background-color: var(--color-main-deep);
   color: white;
 }
+
+/* 테스트 스타일 끝 */
 
 .result-image-wrapper {
   display: flex;
