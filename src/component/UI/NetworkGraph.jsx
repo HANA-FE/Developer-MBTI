@@ -87,7 +87,7 @@ export default function NetworkGraph() {
     // NOTE 링크와 노드 요소 추가
     const link = svg
       .append('g')
-      .attr('stroke', '#fff')
+      .attr('stroke', 'var(--color-main-deep)')
       .attr('stroke-opacity', 0.2)
       .selectAll('line')
       .data(LINKS)
@@ -102,7 +102,7 @@ export default function NetworkGraph() {
       .attr('y', d => d.y ?? 0)
       .text(d => d.id)
       .style('font-size', '0.875rem')
-      .style('fill', '#d9d9d9')
+      .style('fill', 'var(--color-main-deep)')
       .style('cursor', 'grab')
       .attr('text-anchor', 'middle')
       .call(drag);

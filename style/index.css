@@ -8,7 +8,7 @@
 
 .title-wrapper {
   padding: 30px 0;
-  color: white;
+  color: var(--color-white);
 }
 
 .title {
@@ -56,10 +56,10 @@
 
 .start-button {
   background-color: var(--color-main-deep);
-  color: white;
+  color: var(--color-white);
   width: 80%;
   height: 80px;
-  border-color: black;
+  border-color: var(--color-black);
   border-radius: 20px;
   font-size: 2rem;
   @media (max-width: 480px) {
@@ -71,20 +71,20 @@
 }
 
 .answer-button {
-  background-color: white;
-  color: black;
+  background-color: var(--color-white);
+  color: var(--color-black);
   width: 80%;
   height: 75px;
-  border-color: black;
+  border-color: var(--color-black);
   border-radius: 20px;
   font-size: 20px;
 }
 .start-button {
   background-color: var(--color-main-deep);
-  color: white;
+  color: var(--color-white);
   width: 80%;
   height: 80px;
-  border-color: black;
+  border-color: var(--color-black);
   border-radius: 20px;
   font-size: 32px;
   font-family: 'DungGeunMo', Courier, monospace;
@@ -103,7 +103,7 @@
 }
 
 .name-input-title {
-  color: #fff;
+  color: var(--color-white);
   font-size: 1.5rem;
 }
 
@@ -130,7 +130,7 @@
   .loading-text {
     position: absolute;
     bottom: 30%;
-    color: #fff;
+    color: var(--color-white);
     font-weight: 600;
     font-size: 1.125rem;
   }
@@ -167,8 +167,8 @@
   position: sticky;
   top: 0;
   left: 0;
-  background-color: white;
-  color: #735446;
+  background-color: var(--color-white);
+  color: var(--color-main-deep);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -292,7 +292,7 @@
 
 .test-button:hover {
   background-color: var(--color-main-deep);
-  color: white;
+  color: var(--color-white);
 }
 
 /* 테스트 스타일 끝 */
@@ -349,8 +349,9 @@
 }
 
 .result-content-box {
-  background-color: #a68778;
-  border: 1px solid #a68778;
+  background-color: var(--color-main);
+  border: 1px solid var(--color-main);
+  color: var(--color-white);
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
@@ -382,7 +383,7 @@
 .result-button-style {
   width: 100%;
   padding: 12px;
-  background-color: #a68778;
+  background-color: var(--color-main);
   text-align: center;
   border-radius: 5px;
   color: var(--color-white);
