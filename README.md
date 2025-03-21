@@ -47,13 +47,11 @@ $ yarn dev
 
 ## 🖼 데모 스크린샷
 
-|                              시작 화면                               |                         테스트 진행 화면                         |
+|                              **시작 페이지**                              |                         **테스트 페이지**                         |
 | :------------------------------------------------------------------: | :--------------------------------------------------------------: |
-|    <img src="./public/testPage.gif" width="400" alt="시작 화면"/>    | <img src="./public/testPage.gif" width="400" alt="테스트 진행"/> |
-|                         **로딩 애니메이션**                          |                        **결과 분석 화면**                        |
-| <img src="./public/testPage.gif" width="400" alt="로딩 애니메이션"/> |  <img src="./public/testPage.gif" width="400" alt="결과 분석"/>  |
-|                        **결과 공유/다운로드**                        |                                                                  |
-|    <img src="./public/testPage.gif" width="400" alt="결과 공유"/>    |                                                                  |
+|![home](https://github.com/user-attachments/assets/2d482983-66ce-478f-94b9-ca000f6ad990)|![testPage](https://github.com/user-attachments/assets/a33a203e-f985-4d54-ad8d-ce02078844e2)|
+|                         **로딩 페이지**                          |                        **결과 페이지**                        |
+|![loading](https://github.com/user-attachments/assets/81e4281e-beee-438b-a318-69db3c2c20dc) |![result](https://github.com/user-attachments/assets/827ddc3e-3445-4575-9ccd-90029b48e296)|
 
 ## 📂 프로젝트 구조
 
