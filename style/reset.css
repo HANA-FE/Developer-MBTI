@@ -1,3 +1,26 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray-100: #edf0f3;
+  --color-gray-500: #9d9d9d;
+  --color-main: #3d8d7a;
+  --color-main-light: #a3d1c6;
+  --color-main-deep: #007074;
+  --z-index-header: 800;
+  --z-index-home-cat: 200;
+  --z-index-progress-cat: 100;
+  --z-index-start-button: 400;
+}
+
+* {
+  cursor: url('./src/image/cursor.png'), auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  ::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -58,18 +81,39 @@ textarea,
 select {
   font: inherit;
 }
-:root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-gray-100: #edf0f3;
-  --color-main: #a57865;
-  --color-main-light: #b79383;
+
+input {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button:active,
+button:focus {
+  outline: none;
 }
 
 .container {
   max-width: 576px;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
   padding: 0;
   background-color: var(--color-main-light);
+  overflow-y: scroll;
+}
+.notistack-MuiContent-default {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  background-color: var(--color-main-deep) !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.notistack-MuiContent {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }

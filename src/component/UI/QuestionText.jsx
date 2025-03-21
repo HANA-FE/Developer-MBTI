@@ -1,4 +1,4 @@
-import QUESTION from '../../constant/Question';
+import { QUESTION } from '@/src/constant';
 
 const QuestionText = ({ questionId }) => {
   return (
