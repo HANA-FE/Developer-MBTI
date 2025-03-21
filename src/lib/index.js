@@ -1,2 +1,2 @@
 export * from './copyToClipboard';
-export * from './htmlToImage';
+export * from './handleDownload';
