@@ -13,7 +13,7 @@ const images = [FOX, DOLPHIN, CAT, PANDA];
 export default function Loading() {
   const [index, setIndex] = useState(0);
   const location = useLocation();
-  const { result } = location.state || {};
+  const { name, result } = location.state || {};
   const router = useInternalRouter();
 
   useEffect(() => {
@@ -26,9 +26,9 @@ export default function Loading() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/result', { state: { result } });
+      router.push('/result', { state: { name, result } });
     }, 2000);
-  }, [router, result]);
+  }, [router, name, result]);
 
   return (
     <div className="loading-container">

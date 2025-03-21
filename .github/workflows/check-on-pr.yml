@@ -16,7 +16,9 @@ jobs:
                   node-version: "20"
                   check-latest: true
             - name: Install dependencies
-              run: yarn install
+              run: |
+                  yarn set version 4.5.3
+                  yarn install
             - name: Run eslint
               run: yarn lint
               env:

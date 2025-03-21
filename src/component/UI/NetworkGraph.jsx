@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { drag as d3drag } from 'd3';
 // constant
-import { NODES, LINKS } from '@/constant/animals';
+import { NODES, LINKS } from '@/src/constant';
 
-const ROTATION_SPEED = 0.0006;
+const ROTATION_SPEED = 0.0015;
 
 export default function NetworkGraph() {
   const divRef = useRef(null);
@@ -87,7 +87,7 @@ export default function NetworkGraph() {
     // NOTE 링크와 노드 요소 추가
     const link = svg
       .append('g')
-      .attr('stroke', '#Fff')
+      .attr('stroke', '#fff')
       .attr('stroke-opacity', 0.2)
       .selectAll('line')
       .data(LINKS)
@@ -147,7 +147,7 @@ export default function NetworkGraph() {
 
   return (
     <div style={{ width: '100%' }} ref={divRef}>
-      <svg ref={svgRef} />
+      <svg ref={svgRef} style={{ touchAction: 'pan-x' }} />
     </div>
   );
 }

@@ -2,6 +2,7 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-gray-100: #edf0f3;
+  --color-gray-500: #9d9d9d;
   --color-main: #a57865;
   --color-main-light: #b79383;
   --color-main-deep: #735446;
@@ -12,6 +13,7 @@
 }
 
 * {
+  cursor: url('./src/image/cursor.png'), auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   ::-webkit-scrollbar {
@@ -80,6 +82,14 @@ select {
   font: inherit;
 }
 
+input {
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 button:active,
 button:focus {
   outline: none;
@@ -92,4 +102,18 @@ button:focus {
   padding: 0;
   background-color: var(--color-main-light);
   overflow-y: scroll;
+}
+.notistack-MuiContent-default {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  background-color: var(--color-main-deep) !important;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.notistack-MuiContent {
+  display: flex;
+  font-size: 1rem !important;
+  justify-content: center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }

@@ -20,7 +20,7 @@ export const ANIMALS = [
 export const NODES = ANIMALS.map(v => ({ id: v }));
 export const LINKS = ANIMALS.reduce((acc, cur, idx, origin) => {
   let arr = [];
-  for (let i = idx + 1; i < origin.length; i++) {
+  for (let i = idx + 1; i < origin.length; i += 2) {
     arr.push({ source: cur, target: origin[i] });
   }
   return [...acc, ...arr];

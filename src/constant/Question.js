@@ -12,7 +12,7 @@ import Q10 from '@/src/image/question/Q10.png';
 import Q11 from '@/src/image/question/Q11.png';
 import Q12 from '@/src/image/question/Q12.png';
 
-const QUESTION = [
+export const QUESTION = [
   null, // 0번 인덱스는 비워두어 1번부터 시작하도록 함
   {
     type: 'PJ',
@@ -123,5 +123,3 @@ const QUESTION = [
     ],
   },
 ];
-
-export default QUESTION;

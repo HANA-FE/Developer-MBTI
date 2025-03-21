@@ -90,6 +90,31 @@
   font-family: 'DungGeunMo', Courier, monospace;
 }
 
+.app-input {
+  border: 4px inset var(--color-gray-500);
+}
+
+.inputPage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.name-input-title {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.name-input {
+  width: 50%;
+  height: 50px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
 .loading-container {
   display: flex;
   position: relative;
@@ -241,13 +266,15 @@
   border: 2px solid black;
   border-radius: 20px;
   font-size: 18px;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
   white-space: pre-line;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  &:active {
+    transform: translateY(2px);
+  }
 }
 
 .test-button:hover {
@@ -260,8 +287,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 45vh;
+  height: 30vh;
   padding: 0 5%;
+  img {
+    width: 40%;
+  }
 }
 
 .result-title {
@@ -328,7 +358,6 @@
   background-color: #a68778;
   text-align: center;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 20px;
   transition: background-color 0.3s;
 }
