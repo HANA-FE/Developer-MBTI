@@ -5,7 +5,7 @@ import { enqueueSnackbar } from 'notistack';
 export const handleDownload = async (ref, name, deviceInfo) => {
   if (!ref.current) return;
 
-  const { isWeb, isIOS } = deviceInfo;
+  const { isIOS, isAOS } = deviceInfo;
 
   try {
     const div = ref.current;
@@ -14,21 +14,19 @@ export const handleDownload = async (ref, name, deviceInfo) => {
 
     canvas.toBlob(async blob => {
       if (blob !== null) {
-        if (isWeb) {
-          saveAs(blob, fileName);
+        if (isIOS && navigator.share) {
+          const idx = fileName.lastIndexOf('.');
+          const etc = fileName.slice(idx + 1);
+          const file = new File([blob], fileName, { type: `image/${etc}` });
+          await saveImageToGalleryWithShare(file, name);
+        } else if (isAOS) {
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = fileName;
+          link.click();
+          URL.revokeObjectURL(link.href);
         } else {
-          if (isIOS) {
-            const idx = fileName.lastIndexOf('.');
-            const etc = fileName.slice(idx + 1);
-            const file = new File([blob], fileName, { type: `image/${etc}` });
-            await saveImageToGalleryWithShare(file, name);
-          } else {
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = fileName;
-            link.click();
-            URL.revokeObjectURL(link.href);
-          }
+          saveAs(blob, fileName);
         }
       }
     });
@@ -40,8 +38,9 @@ export const handleDownload = async (ref, name, deviceInfo) => {
 
 const saveImageToGalleryWithShare = async (file, fileName) => {
   try {
-    if (navigator.share && navigator.canShare({ title: '검사 결과 저장', text: fileName, files: [file] })) {
-      await navigator.share({ title: '검사 결과 저장', text: fileName, files: [file] });
+    const shareObj = { title: '검사 결과 저장', text: fileName, files: [file] };
+    if (navigator.canShare(shareObj)) {
+      await navigator.share(shareObj);
     }
   } catch (error) {
     console.error('Error sharing image:', error);
