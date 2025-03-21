@@ -50,7 +50,7 @@ export const RESULT_INFO = [
     image: snake,
   },
   {
-    mbti: 'ISFJ',
+    mbti: 'ISTJ',
     name: '원칙주의자 거북이',
     hashTag: ['📅 계획대로 된다', '📊 논리적 판단 끝판왕', '🤝 약속은 반드시 지킨다'],
     content: [
@@ -62,7 +62,7 @@ export const RESULT_INFO = [
   },
   {
     mbti: 'INFP',
-    name: '감성적이고 고양이',
+    name: '감성적인 고양이',
     hashTag: ['🎨 감성 코딩', '💡 아이디어 뱅크', '🌿 몰입의 신'],
     content: [
       '코드에 감정을 담으며, 영감을 받으면 밤새 몰입 할지도?',
@@ -73,7 +73,7 @@ export const RESULT_INFO = [
   },
   {
     mbti: 'INFJ',
-    name: '생각 깊은 팬더',
+    name: '생각 깊은 판다',
     hashTag: ['🤝 이해와 공감', '🏗️ 큰 그림 설계', '✨ 완성도 집착증'],
     content: [
       '팀원들의 성장을 돕고, 개발을 통해 더 나은 세상을 만들고 싶어 한다.',
