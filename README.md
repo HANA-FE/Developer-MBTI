@@ -49,7 +49,7 @@ $ yarn dev
 
 |                              **시작 페이지**                              |                         **테스트 페이지**                         |
 |:------------------------------------------------------------------: | :--------------------------------------------------------------: |
-|  ![home](https://github.com/user-attachments/assets/3218e34f-a629-4c55-986f-05f8894c1141) |![testPage](https://github.com/user-attachments/assets/a33a203e-f985-4d54-ad8d-ce02078844e2)|
+| ![home](https://github.com/user-attachments/assets/3a77f73a-66a9-4e9d-a55c-2ff93293261a)  |![testPage](https://github.com/user-attachments/assets/a33a203e-f985-4d54-ad8d-ce02078844e2)|
 |                         **로딩 페이지**                          |                        **결과 페이지**                        |
 |![loading](https://github.com/user-attachments/assets/81e4281e-beee-438b-a318-69db3c2c20dc) |![result](https://github.com/user-attachments/assets/827ddc3e-3445-4575-9ccd-90029b48e296)|
 
