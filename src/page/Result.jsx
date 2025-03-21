@@ -45,17 +45,17 @@ const Result = () => {
           </div>
 
           <div className="result-button-wrapper">
-            <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
-            <br />
-
-            <Button
-              onClick={() => {
-                handleDownload(resultRef, name);
-              }}
-              text="이미지 다운로드"
-              type="result-button-style {
-"
-            />
+            <div className="button-row">
+              <Button text="테스트 공유하기" onClick={debouncedCopy} type="result-button-style" />
+              <Button
+                onClick={() => {
+                  handleDownload(resultRef, name);
+                }}
+                text="이미지 다운로드"
+                type="result-button-style"
+              />
+            </div>
+            <Button text="다시하기" type="result-button-style" />
           </div>
         </div>
       ) : (
