@@ -1,6 +1,8 @@
 import { useInternalRouter } from '../hook/useInternalRouter';
 // style
 import '@/style/index.css';
+// constant
+import { NAME_INPUT_PATH } from '@/src/constant';
 // component
 import Button from '@/src/component/UI/Button';
 import Cat from '@/src/image/homeCat.png';
@@ -23,7 +25,7 @@ function Home() {
       </div>
 
       <div className="Home-button">
-        <Button onClick={() => router.push('/name')} type="start-button" text="테스트 시작하기" />
+        <Button onClick={() => router.push(NAME_INPUT_PATH)} type="start-button" text="테스트 시작하기" />
       </div>
     </div>
   );

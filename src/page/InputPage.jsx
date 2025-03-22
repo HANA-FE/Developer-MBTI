@@ -1,5 +1,7 @@
 import { useState, useCallback } from 'react';
 import { enqueueSnackbar } from 'notistack';
+// constant
+import { TEST_PATH } from '@/src/constant';
 // hook
 import { useInternalRouter } from '../hook/useInternalRouter';
 // component
@@ -15,7 +17,7 @@ export default function InputPage() {
       enqueueSnackbar('이름을 입력해주세요!');
       return;
     }
-    router.push('/test', { state: { name } });
+    router.push(TEST_PATH, { state: { name } });
   }, [name, router]);
 
   return (
