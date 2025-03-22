@@ -7,13 +7,15 @@ export function useDeviceInfo() {
   const [isNaver, setIsNaver] = useState(false);
 
   useEffect(() => {
-    const { userAgent } = navigator;
-    setIsAOS(/iPhone|iPad/i.test(userAgent));
-    setIsIOS(/iPhone|iPad|iPod/i.test(userAgent));
-    setIsChrome(/CriOS/i.test(userAgent));
-    setIsNaver(/Naver/i.test(userAgent));
+    const userAgent = navigator.userAgent.toLowerCase();
+    setIsAOS(/android/i.test(userAgent));
+    setIsIOS(/iphone|ipad/i.test(userAgent));
+    setIsChrome(/crios/i.test(userAgent));
+    setIsNaver(/naver/i.test(userAgent));
   }, []);
 
   const isMobile = isIOS || isAOS;
-  return { deviceInfo: { isIOS, isAOS, isMobile, isWeb: !isMobile, isChrome, isNaver } };
+  const isWeb = !isMobile;
+
+  return { deviceInfo: { isIOS, isAOS, isMobile, isWeb, isChrome, isNaver } };
 }
