@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+// constant
+import { RESULT_PATH } from '@/src/constant';
 // hook
 import { useInternalRouter } from '../hook/useInternalRouter';
 // image
@@ -26,7 +28,7 @@ export default function Loading() {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('/result', { state: { name, result } });
+      router.push(RESULT_PATH, { state: { name, result } });
     }, 2000);
   }, [router, name, result]);
 

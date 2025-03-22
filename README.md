@@ -1,5 +1,5 @@
-# 개발놈 TEST (개발자 성향 테스트)
-[개발놈 TEST 바로가기](https://develop.d3vy5nrbquxsy6.amplifyapp.com)
+# 개발놈 TEST
+[개발놈 TEST 바로가기](https://main.d3vy5nrbquxsy6.amplifyapp.com)
 
 개발자의 성향을 MBTI 형식으로 테스트하여 결과를 알려주는 웹 애플리케이션입니다.
 
@@ -47,13 +47,10 @@ $ yarn dev
 
 ## 🖼 데모 스크린샷
 
-|                              시작 화면                               |                         테스트 진행 화면                         |
-| :------------------------------------------------------------------: | :--------------------------------------------------------------: |
-|    <img src="./public/testPage.gif" width="400" alt="시작 화면"/>    | <img src="./public/testPage.gif" width="400" alt="테스트 진행"/> |
-|                         **로딩 애니메이션**                          |                        **결과 분석 화면**                        |
-| <img src="./public/testPage.gif" width="400" alt="로딩 애니메이션"/> |  <img src="./public/testPage.gif" width="400" alt="결과 분석"/>  |
-|                        **결과 공유/다운로드**                        |                                                                  |
-|    <img src="./public/testPage.gif" width="400" alt="결과 공유"/>    |                                                                  |
+|                              **시작 페이지**                              |                         **테스트 페이지**                         |                         **로딩 페이지**                          |                        **결과 페이지**                        |
+|:------------------------------------------------------------------:|:--------------------------------------------------------------:|:--------------------------------------------------------------:|:--------------------------------------------------------------:|
+| <img src="https://github.com/user-attachments/assets/3a77f73a-66a9-4e9d-a55c-2ff93293261a" width="200"/>  | <img src="https://github.com/user-attachments/assets/a33a203e-f985-4d54-ad8d-ce02078844e2" width="200"/> | <img src="https://github.com/user-attachments/assets/81e4281e-beee-438b-a318-69db3c2c20dc" width="200"/> | <img src="https://github.com/user-attachments/assets/827ddc3e-3445-4575-9ccd-90029b48e296" width="200"/> |
+
 
 ## 📂 프로젝트 구조
 
@@ -70,7 +67,7 @@ src/
 └── image/
 ```
 
-### 👥 팀원 소개
+## 👥 팀원 소개
 | 이재혁 | 이봉욱 | 박준희 | 이철우 |
 | :---: | :---: | :---: | :---: |
 | [![GitHub](https://img.shields.io/badge/GitHub-HYEOK9-181717?style=flat&logo=github)](https://github.com/HYEOK9) ![Role](https://img.shields.io/badge/Role-Frontend_Lead-FF6B6B?style=flat) | [![GitHub](https://img.shields.io/badge/GitHub-kiv9908-181717?style=flat&logo=github)](https://github.com/kiv9908) | [![GitHub](https://img.shields.io/badge/GitHub-lucy01330-181717?style=flat&logo=github)](https://github.com/lucy01330) | [![GitHub](https://img.shields.io/badge/GitHub-fewolee-181717?style=flat&logo=github)](https://github.com/fewolee) |

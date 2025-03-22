@@ -5,7 +5,7 @@ import { useInternalRouter } from '../hook/useInternalRouter';
 // style
 import '@/style/index.css';
 // constant
-import { QUESTION } from '@/src/constant';
+import { QUESTION, NAME_INPUT_PATH, LOADING_PATH } from '@/src/constant';
 // component
 import Button from '@/src/component/UI/Button';
 import QuestionText from '@/src/component/UI/QuestionText';
@@ -20,7 +20,7 @@ const Test = () => {
 
   // 이름 입력 안했을 경우 name입력 칸으로
   useEffect(() => {
-    if (!name) router.push('/name');
+    if (!name) router.push(NAME_INPUT_PATH);
   }, [name, router]);
 
   // id 1부터 시작, QUESTION의 길이 : 13, QUESTION 0번째의 값에는 NULL 값이 들어있음
@@ -61,7 +61,7 @@ const Test = () => {
     // 마지막 질문일 경우
     else {
       const result = calculateResult(answers);
-      router.push('/loading', { state: { name, result } });
+      router.push(LOADING_PATH, { state: { name, result } });
     }
   };
 
