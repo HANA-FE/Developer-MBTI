@@ -67,7 +67,7 @@ src/
 └── image/
 ```
 
-### 👥 팀원 소개
+## 👥 팀원 소개
 | 이재혁 | 이봉욱 | 박준희 | 이철우 |
 | :---: | :---: | :---: | :---: |
 | [![GitHub](https://img.shields.io/badge/GitHub-HYEOK9-181717?style=flat&logo=github)](https://github.com/HYEOK9) ![Role](https://img.shields.io/badge/Role-Frontend_Lead-FF6B6B?style=flat) | [![GitHub](https://img.shields.io/badge/GitHub-kiv9908-181717?style=flat&logo=github)](https://github.com/kiv9908) | [![GitHub](https://img.shields.io/badge/GitHub-lucy01330-181717?style=flat&logo=github)](https://github.com/lucy01330) | [![GitHub](https://img.shields.io/badge/GitHub-fewolee-181717?style=flat&logo=github)](https://github.com/fewolee) |
