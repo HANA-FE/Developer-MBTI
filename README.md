@@ -1,5 +1,5 @@
 # 개발놈 TEST
-[개발놈 TEST 바로가기](https://develop.d3vy5nrbquxsy6.amplifyapp.com)
+[개발놈 TEST 바로가기](https://main.d3vy5nrbquxsy6.amplifyapp.com)
 
 개발자의 성향을 MBTI 형식으로 테스트하여 결과를 알려주는 웹 애플리케이션입니다.
 
